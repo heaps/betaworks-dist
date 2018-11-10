@@ -1,22 +1,4 @@
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-
-    <title>Digital Transformation</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <!-- Custom styles for this template -->
-    <link href="/starter-template.css" rel="stylesheet">
-    <script src="https://unpkg.com/history/umd/history.min.js"></script>
-
     <!-- blockchain styles and libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.6/ladda-themeless.min.css">
     <link rel="stylesheet" href="assets/css/blockchain.css">
@@ -28,90 +10,72 @@
     <script src="assets/js/blockies.js"></script>    
     <script src="assets/js/blockies_optimizations.min.js"></script>    
 
-  </head>
+    <div id="breadcrumbs"></div>
+    <script src="/blockchain/breadcrumbs_basics.js"></script>
 
-  <body>
+    <!-- card start -->
+    <div class="card mb-3">
+    <h5 class="card-header">Blockchain Basics: Standalone Block</h5>
+    <div class="card-body" id="background" style="background-color: #E0F0D9;">
 
-    <div id="navigationBar"></div>
-    <script src="/blockchain/navigationBar.js"></script>
+    <!-- form start -->
+    <div class="form-horizontal">
+        <div class="form-group">
 
-
-    <main role="main" class="container">
-
-
-
-          <!-- card start -->
-          <div class="card mb-3">
-            <h5 class="card-header">Blockchain Basics: Standalone Block</h5>
-            <div class="card-body" id="background" style="background-color: #E0F0D9;">
-
-            <!-- form start -->
-            <div class="form-horizontal">
-                <div class="form-group">
-
-                    <!-- block and nonce labels -->
-                    <div class="form-row">
-                        <div class="col">
-                          <label class="control-label">Block:</label>
-                        </div>
-                        <div class="col">
-                          <label class="control-label">Nonce:</label>
-                        </div>                        
-                    </div>
-
-                    <!-- block and nonce numbers -->
-                    <div class="form-row">
-                        <div class="col">
-                          <input id="block" type="text" class="form-control" value="1" disabled >
-                        </div>
-                        <div class="col">
-                          <input id="nonce" type="text" class="form-control" value="72608">
-                        </div>                        
-                    </div><br>
-
-                    <!-- block data -->
-                    <label class="control-label">Data:</label>
-                    <div>
-                        <textarea id="data" rows="10" class="form-control"></textarea>                        
-                    </div><br>
-
-                    <!-- block hash -->
-                    <label class="control-label">Hash:</label>
-                    <div class="form-row">
-                        <div class="col">
-                          <input id="hash" type="text" disabled class="form-control">
-                        </div>
-                        <div class="col-auto">
-                          <button class="btn btn-primary ladda-button" data-style="expand-right" id="mineButton" onclick="mineBlock()">
-                            <span class="ladda-label">Mine</span>
-                          </button>
-                        </div>                        
-                    </div><br>
-
-                    <!-- show if hash pattern not found -->
-                    <div id="demo">
-                      <transition name="fade">
-                        <p id="miningMessage" class="text-primary"></p>
-                      </transition>
-                    </div>
-
+            <!-- block and nonce labels -->
+            <div class="form-row">
+                <div class="col">
+                  <label class="control-label">Block:</label>
                 </div>
+                <div class="col">
+                  <label class="control-label">Nonce:</label>
+                </div>                        
             </div>
-            <!-- form end -->
 
+            <!-- block and nonce numbers -->
+            <div class="form-row">
+                <div class="col">
+                  <input id="block" type="text" class="form-control" value="1" disabled >
+                </div>
+                <div class="col">
+                  <input id="nonce" type="text" class="form-control" value="72608">
+                </div>                        
+            </div><br>
+
+            <!-- block data -->
+            <label class="control-label">Data:</label>
+            <div>
+                <textarea id="data" rows="10" class="form-control"></textarea>                        
+            </div><br>
+
+            <!-- block hash -->
+            <label class="control-label">Hash:</label>
+            <div class="form-row">
+                <div class="col">
+                  <input id="hash" type="text" disabled class="form-control">
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary ladda-button" data-style="expand-right" id="mineButton" onclick="mineBlock()">
+                    <span class="ladda-label">Mine</span>
+                  </button>
+                </div>                        
+            </div><br>
+
+            <!-- show if hash pattern not found -->
+            <div id="demo">
+              <transition name="fade">
+                <p id="miningMessage" class="text-primary"></p>
+              </transition>
             </div>
-          </div>
-          <!-- card end -->
 
+        </div>
+    </div>
+    <!-- form end -->
 
+    </div>
+    </div>
+    <!-- card end -->
 
-    </main><!-- /.container -->
-
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <script>
 
@@ -142,12 +106,11 @@
         }        
 
 
-        window.onload = function(){
+        $( document ).ready(function(){        
             hash();
             data.oninput  = function(e){ hash();};
             nonce.oninput = function(e){ hash();};            
-        };
-    
+        });
 
         function myFunction() {
             var x = document.getElementById("myDIV");
